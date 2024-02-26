@@ -1,17 +1,17 @@
 package edu.iu.habahram.remotecontroller.model;
 
 public class Light {
-	String location = "";
+    String location = "";
 
-	public Light(String location) {
-		this.location = location;
-	}
+    public Light(String location) {
+        this.location = location;
+    }
 
-	public void on() {
-		System.out.println(location + " light is on");
-	}
+    public String on() {
+        return location + " light is on";
+    }
 
-	public void off() {
-		System.out.println(location + " light is off");
-	}
+    public String off() {
+        return location + " light is off";
+    }
 }

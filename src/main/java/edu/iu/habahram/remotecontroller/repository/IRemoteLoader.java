@@ -1,12 +1,13 @@
 package edu.iu.habahram.remotecontroller.repository;
 
-import edu.iu.habahram.remotecontroller.model.Device;
+import edu.iu.habahram.remotecontroller.model.DeviceData;
 
 import java.util.List;
 
 public interface IRemoteLoader {
-    void setup(List<Device> devices);
+    void setup(int id, List<DeviceData> devices);
 
-    void onButtonWasPushed(int slot);
+    String onButtonWasPushed(int id, int slot);
+    String offButtonWasPushed(int id, int slot);
 
 }

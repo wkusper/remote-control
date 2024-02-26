@@ -7,13 +7,13 @@ public class RemoteControl {
 	Command[] onCommands;
 	Command[] offCommands;
  
-	public RemoteControl() {
-		onCommands = new Command[7];
-		offCommands = new Command[7];
+	public RemoteControl(int numberOfDevices) {
+		onCommands = new Command[numberOfDevices];
+		offCommands = new Command[numberOfDevices];
  
-		for (int i = 0; i < 7; i++) {
-			onCommands[i] = () -> { };
-			offCommands[i] = () -> { };
+		for (int i = 0; i < numberOfDevices; i++) {
+			onCommands[i] = () -> { return ""; };
+			offCommands[i] = () -> { return ""; };
 		}
 	}
   
@@ -22,12 +22,14 @@ public class RemoteControl {
 		offCommands[slot] = offCommand;
 	}
  
-	public void onButtonWasPushed(int slot) {
-		onCommands[slot].execute();
+	public String onButtonWasPushed(int slot) {
+
+		return onCommands[slot].execute();
 	}
  
-	public void offButtonWasPushed(int slot) {
-		offCommands[slot].execute();
+	public String offButtonWasPushed(int slot) {
+
+		return offCommands[slot].execute();
 	}
 
 	public String toString() {
